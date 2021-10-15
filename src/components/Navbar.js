@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
-  const [productsSelected, setProductsSelected] = useState(false);
+  const [productsSelected, setProductsSelected] = useState(true);
   const [servicesSelected, setServicesSelected] = useState(false);
   const [contactSelected, setContactSelected] = useState(false);
 

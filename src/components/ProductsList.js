@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import headBanner from "../images/headBanner.jpg";
+import item from "../images/item.jpg";
 
 const ProductsList = () => {
   const [productsArray, setProductsArray] = useState(null);
@@ -7,31 +7,33 @@ const ProductsList = () => {
   useEffect(
     () =>
       setProductsArray([
-        { id: 1, name: "kiripiti", price: "500 LKR" },
-        { id: 2, name: "Ala", price: "250 LKR" },
-        { id: 3, name: "seeni", price: "125 LKR" },
-        { id: 4, name: "Mun ata", price: "100 LKR" },
+        { id: 1, name: "kiripiti", price: "500", qty: "15" },
+        { id: 2, name: "gas", price: "250", qty: "25" },
+        { id: 3, name: "paan", price: "125", qty: "18" },
+        { id: 4, name: "kesel kan", price: "100", qty: "12" },
       ]),
 
     []
   );
 
   return (
-    <div className="bg-gray-200 grid grid-cols-3">
+    <div className="bg-gray-200 grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
       {productsArray &&
         productsArray.map((element) => (
           <div class="card">
             <img
-              src={headBanner}
-              alt="stew"
-              class="h-32 sm:h-48 w-full object-cover"
+              src={item}
+              alt="Product"
+              class="h-42 sm:h-62 w-full object-cover"
             />
             <div class="m-4">
-              <span class="font-bold">5 Bean Chili Stew</span>
-              <span class="block text-gray-500 text-sm">Recipe by Mario</span>
+              <span class="font-bold">{element.name}</span>
+              <span class="block text-gray-500 text-sm">
+                {element.price} LKR
+              </span>
             </div>
             <div class="badge">
-              <span>25 mins</span>
+              <span> {element.qty} in stock</span>
             </div>
           </div>
         ))}
