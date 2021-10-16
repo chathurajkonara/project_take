@@ -12,6 +12,7 @@ module.exports = {
       xl: "1280px",
       "2xl": "1536px",
     },
+
     colors: {
       transparent: "transparent",
       current: "currentColor",
@@ -1024,7 +1025,7 @@ module.exports = {
     translate: ["responsive", "hover", "focus"],
     userSelect: ["responsive"],
     verticalAlign: ["responsive"],
-    visibility: ["responsive"],
+    visibility: ["responsive", "group-hover"],
     whitespace: ["responsive"],
     width: ["responsive"],
     wordBreak: ["responsive"],

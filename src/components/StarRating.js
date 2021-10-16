@@ -41,20 +41,26 @@ export default function StarRating(props) {
       <h1 className="font-bold text-sm text-red-900 sm:text-lg">
         Would you like to rate us..
       </h1>
-      <h3 className=" font-extrabold text-green-500">
-        {selecting?.selectingValue} (126)
-      </h3>
-      <div>
-        <StarsRating
-          onStarsRated={(value) => {
-            alert(`${value} stars rated`);
-          }}
-          onSelecting={(isSelecting, selectingValue) => {
-            setSelecting({ isSelecting, selectingValue });
-          }}
-          config={config}
-        />
-      </div>
+      <span className="group">
+        <h3 className=" font-extrabold text-green-500">
+          {selecting?.selectingValue}{" "}
+          <span className="visible group-hover:invisible">
+            {" "}
+            ({props.ratingsCount})
+          </span>
+        </h3>
+        <div>
+          <StarsRating
+            onStarsRated={(value) => {
+              alert(`${value} stars rated`);
+            }}
+            onSelecting={(isSelecting, selectingValue) => {
+              setSelecting({ isSelecting, selectingValue });
+            }}
+            config={config}
+          />
+        </div>
+      </span>
     </div>
   );
 }
