@@ -11,5 +11,5 @@
 }
 
 .App {
-  @apply font-sans text-center text-red-300;
+  @apply font-sans text-center text-red-800;
 }

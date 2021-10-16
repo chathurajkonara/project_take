@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import item from "../images/item.jpg";
+import service from "../images/service.jpg";
 
 const ServicesList = () => {
   const [servicesArray, setservicesArray] = useState(null);
@@ -25,6 +25,13 @@ const ServicesList = () => {
           rate: "0% interest",
           avaliability: "avaliable",
         },
+
+        {
+          id: 3,
+          name: "After Pay",
+          rate: "2% interest",
+          avaliability: "avaliable",
+        },
       ]),
 
     []
@@ -36,7 +43,7 @@ const ServicesList = () => {
         servicesArray.map((element) => (
           <div class="card">
             <img
-              src={item}
+              src={service}
               alt="Product"
               class="h-42 sm:h-62 w-full object-cover"
             />

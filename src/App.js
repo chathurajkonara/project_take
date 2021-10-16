@@ -7,14 +7,12 @@ import ProductsList from "./components/ProductsList";
 import ServicesList from "./components/ServicesList";
 import ContatEntity from "./components/ContatEntity";
 import EntityHeader from "./components/EntityHeader";
-import StarRating from "./components/StarRating";
 
 function App() {
   return (
     <Router>
       <div className="mx-auto px-4">
         <EntityHeader />
-        <StarRating />
         <Navbar />
         <Route exact path="/" component={ProductsList} />
         <Route exact path="/create" component={ServicesList} />
