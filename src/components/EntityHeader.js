@@ -27,7 +27,7 @@ const EntityHeader = () => {
       )}
       <div className="flex justify-center justify-items-center my-2 sm:my-4">
         <a
-          className=" text-xl sm:text-2xl lg:text-4xl font-extrabold text-green-800 hover:text-blue-600"
+          className=" text-xl sm:text-2xl hidden sm:block lg:text-4xl font-extrabold text-green-800 hover:text-blue-600"
           href="https://www.google.com/"
         >
           {" "}

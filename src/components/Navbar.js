@@ -1,13 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
-  const [productsSelected, setProductsSelected] = useState(true);
-  const [servicesSelected, setServicesSelected] = useState(false);
-  const [contactSelected, setContactSelected] = useState(false);
+  const [productsSelected, setProductsSelected] = useState(
+    localStorage.getItem("productsSelected") === "true"
+  );
+  const [servicesSelected, setServicesSelected] = useState(
+    localStorage.getItem("servicesSelected") === "true"
+  );
+  const [contactSelected, setContactSelected] = useState(
+    localStorage.getItem("contactSelected") === "true"
+  );
+
+  useEffect(() => {
+    localStorage.setItem("productsSelected", true);
+  }, []);
+
+  //saving and retriving current state
+  useEffect(() => {
+    localStorage.setItem("productsSelected", productsSelected);
+    localStorage.setItem("servicesSelected", servicesSelected);
+    localStorage.setItem("contactSelected", contactSelected);
+  }, [productsSelected, servicesSelected, contactSelected]);
+
+  // useEffect(() => {
+  //   setProductsSelected(localStorage.getItem("productsSelected") === "true");
+  //   setServicesSelected(localStorage.getItem("servicesSelected") === "true");
+  //   setContactSelected(localStorage.getItem("contactSelected") === "true");
+  // }, [productsSelected, servicesSelected, contactSelected]);
 
   return (
-    <nav className="bg-gray-50 mb-12 mt-2 bg-transparent sticky top-40 sm:top-29 md:top-21 z-10">
+    <nav className="bg-gray-50 mb-12 mt-2 bg-transparent sticky top-33 sm:top-29 md:top-21 z-10">
       <ul className="flex justify-evenly space-x-2 bg-gray-200">
         <li
           className={`flex-auto text-center rounded-md bg-white hover:bg-gray-100 transition ease-in-out duration-700 text-gray-700 shadow-md inline-block p-2 ${
